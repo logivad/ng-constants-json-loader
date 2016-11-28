@@ -8,7 +8,7 @@ TODO
 
 ## Usage
 
-So if we hava a webpack config
+Given a webpack config
 
 ``` javascript
 module: {
@@ -28,7 +28,7 @@ module: {
 }
 ```
 
-...and config.json
+and config.json
 
 ``` json
 {
@@ -41,7 +41,7 @@ module: {
 }
 ```
 
-we will get an output:
+we will get a module
 
 ``` javascript
 angular.module("constants", [])
