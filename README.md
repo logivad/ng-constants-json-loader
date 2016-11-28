@@ -8,6 +8,52 @@ TODO
 
 ## Usage
 
+So if we hava a webpack config
+
+``` javascript
+module: {
+  rules: [
+    {
+      // Let's take our config file by absolute url
+      test: path.resolve(__dirname + 'app/config.json'),
+      loader: 'ng-constants-json-loader.js',
+      query: {
+        // default
+        moduleName: 'constants',
+        // default
+        standalone: true
+      }
+    }
+  ]
+}
+```
+
+...and config.json
+
+``` json
+{
+	"api": {
+		"url": "http://example.com"
+	}, 
+	"settings": {
+		"lang": "en"
+	}
+}
+```
+
+we will get an output:
+
+``` javascript
+angular.module("constants", [])
+
+  .constant("api", {
+    "url": "http://example.com"
+  })
+  .constant("settings", {
+    "lang": "en"
+  });
+```
+
 ``` javascript
 query: {
   moduleName: 'moduleName',
