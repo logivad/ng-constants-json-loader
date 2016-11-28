@@ -1,6 +1,6 @@
 # ng-constants-json-loader for webpack
 
-This loader transforms json object into angular module with constants. Each key from the given json object will create a separate constant.
+Transform javascript object from json file into an angular module with constants. Each key from the given json object will create a separate constant.
 
 ## Installation
 
