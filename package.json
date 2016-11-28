@@ -1,0 +1,11 @@
+{
+  "name": "ng-constants-json-loader",
+  "version": "0.0.1",
+  "author": "Vadim Loginov @vadimatp",
+  "description": "ng-constants-json loader module for webpack",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vloginov/ng-constants-json-loader"
+  }
+}
