@@ -20,7 +20,10 @@ module: {
       query: {
         // default
         moduleName: 'constants',
-        // default
+        // Should it be a standalone module:
+        //   angular.module('name', [])
+        // or not:
+        //   angular.module('name')
         standalone: true
       }
     }
@@ -41,7 +44,7 @@ and config.json
 }
 ```
 
-we will get a module
+the loader will emit an angular module
 
 ``` javascript
 angular.module("constants", [])
@@ -52,13 +55,6 @@ angular.module("constants", [])
   .constant("settings", {
     "lang": "en"
   });
-```
-
-``` javascript
-query: {
-  moduleName: 'moduleName',
-  standalone: false
-}
 ```
 
 ## License
