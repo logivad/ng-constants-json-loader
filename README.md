@@ -32,12 +32,12 @@ module: {
 
 ``` json
 {
-	"api": {
-		"url": "http://example.com"
-	}, 
-	"settings": {
-		"lang": "en"
-	}
+  "api": {
+    "url": "http://example.com"
+  }, 
+  "settings": {
+    "lang": "en"
+  }
 }
 ```
 
