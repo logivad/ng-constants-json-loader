@@ -39,7 +39,5 @@ module.exports = function(source) {
 
   output += ';';
 
-  console.log(output);
-
   return output;
 };
