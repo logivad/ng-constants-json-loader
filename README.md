@@ -4,7 +4,9 @@ Transform javascript object from json file into an angular module with constants
 
 ## Installation
 
-TODO
+```
+npm i ng-constants-json-loader --save
+```
 
 ## Usage
 
@@ -16,7 +18,7 @@ module: {
     {
       // Let's take our config file by absolute url
       test: path.resolve(__dirname + 'app/config.json'),
-      loader: 'ng-constants-json-loader.js',
+      loader: 'ng-constants-json-loader',
       query: {
         // default
         moduleName: 'constants',
