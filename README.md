@@ -18,7 +18,7 @@ module: {
     {
       // Let's take our config file by absolute url
       test: path.resolve(__dirname + 'app/config.json'),
-      loader: 'ng-constants-json-loader.js',
+      loader: 'ng-constants-json-loader',
       query: {
         // default
         moduleName: 'constants',
