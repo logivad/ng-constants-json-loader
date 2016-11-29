@@ -4,7 +4,9 @@ Transform javascript object from json file into an angular module with constants
 
 ## Installation
 
-TODO
+```
+npm i ng-constants-json-loader --save
+```
 
 ## Usage
 
