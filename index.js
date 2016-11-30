@@ -2,42 +2,35 @@
   MIT License http://www.opensource.org/licenses/mit-license.php
   Author Vadim Loginov @vadimatp
 */
+'use strict';
+
 module.exports = function(source) {
   var data;
-  var currentConstantName;
-  var currentConstantKey;
   var constantNames;
-  var currentConstantKeys;
+  var i;
   var output;
   var moduleName;
+  var standalone;
   try {
     data = JSON.parse(source);
   } catch (e) {
     this.emitError(this.resourcePath + ' must be a valid json object');
     return '';
   }
-  console.log('this.query', this.query);
   moduleName = this.query.moduleName || 'constants';
   standalone = this.query.standalone || true;
 
   constantNames = Object.keys(data);
-  output = 'angular.module("' + moduleName + '"' + (standalone ? ', []' : '') + ')\n';
-  for (currentConstantName = 0; currentConstantName < constantNames.length; currentConstantName++) {
-    output += '\n  .constant("' + constantNames[currentConstantName] + '", {\n';
-    currentConstantKeys = Object.keys(data[constantNames[currentConstantName]]);
-    for (currentConstantKey = 0; currentConstantKey < currentConstantKeys.length; currentConstantKey++) {
-      output += '    "' + currentConstantKeys[currentConstantKey] + '": "' +
-        data[constantNames[currentConstantName]][currentConstantKeys[currentConstantKey]];
-      if (currentConstantKey + 1 !== currentConstantKeys.length) {
-        output += '",\n';
-      } else {
-        output += '"\n';
-      }
-    }
-    output += '  })';
+  if (!constantNames.length) {
+    this.emitError(this.resourcePath + ' must be a valid json object');
+  }
+  output = '"use strict";export default angular.module("' + moduleName + '"' + (standalone ? ', []' : '') + ')';
+  for (i in constantNames) {
+    output += '\n  .constant("' + constantNames[i] + '", ';
+    output += JSON.stringify(data[constantNames[i]]);
+    output += ')';
   }
 
   output += ';';
-
   return output;
 };
