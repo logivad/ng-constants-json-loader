@@ -18,7 +18,7 @@ module.exports = function(source) {
     return '';
   }
   moduleName = this.query.moduleName || 'constants';
-  standalone = this.query.standalone || true;
+  standalone = this.query.standalone !== false;
 
   constantNames = Object.keys(data);
   if (!constantNames.length) {

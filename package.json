@@ -1,6 +1,6 @@
 {
   "name": "ng-constants-json-loader",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "author": "Vadim Loginov @vadimatp",
   "description": "Transform javascript object from json file into an angular module with constants",
   "license": "MIT",
