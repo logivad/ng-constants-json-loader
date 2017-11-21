@@ -46,6 +46,12 @@ and config.json
 }
 ```
 
+includes the json file into your `app.js` file for being recognised by webpack
+
+```javascript
+require('./config.json');
+```
+
 the loader will emit an angular module
 
 ``` javascript
